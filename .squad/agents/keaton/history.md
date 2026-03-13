@@ -138,3 +138,23 @@ Single validation layer failed in v0.8.22. PRD adds **3 layers**:
 3. **Publish gates:** publish.yml validates semver, SKIP_BUILD_BUMP, dry-run before npm publish
 
 **Outcome:** 29 work items, 5 architecture decisions, 6 implementation phases. Ready for agent execution. No more v0.8.22-style disasters.
+
+## Learnings
+
+📌 Comprehensive Issue Triage (2026-07-14): Full triage sweep of all open issues.
+
+**Label Migration:** Remapped 19 issues from old Apollo 13 casting labels (squad:flight, squad:eecom, squad:fido, etc.) to new Usual Suspects labels (squad:keaton, squad:fenster, squad:hockney, etc.). Multi-label issues (#294, #284, #259) handled correctly with both old labels removed and both new labels added.
+
+**New Issue Triage:** Triaged 28 previously-unlabeled issues with squad member assignments, priority, and type labels:
+- **Duplicates closed:** #364 and #365 (both duplicates of #366, Native Session Ask-Tracking)
+- **A2A protocol suite (#332-#336):** All labeled as research spikes under squad:keaton + relevant implementer, with go:needs-research flag
+- **P1 bugs identified:** #363 (transient API error on WSL), #356 (machine-specific config path), #348 (cross-platform log files), #342 (casting engine bypass), #337 (SDK init config gap)
+- **P1 features:** #368 (base roles for casting), #366 (session ask-tracking), #354/#353 (skills → .copilot/skills/ migration), #350 (branch guidance inconsistency), #330 (coordinator tooling layers)
+- **Research spikes:** #371 (distributed mesh), #355 (external API docs), #260 (GitHub.com experience) — all flagged go:needs-research
+
+**Key routing patterns applied:**
+- Casting module issues → Fenster (primary) + Verbal (prompt/charter secondary)
+- SDK integration bugs → Kujan + Fenster
+- Prompt/coordinator changes → Verbal (primary) + Keaton (architecture secondary)
+- Docs issues → McManus, cross-platform bugs → Fenster
+- A2A is research-only — no implementation until architecture is validated
