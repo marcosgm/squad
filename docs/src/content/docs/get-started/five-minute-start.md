@@ -16,13 +16,13 @@ Your first 5 minutes with Squad. Prove it works before you learn anything.
 ## Install
 
 ```bash
-npm install -g @bradygaster/squad-cli
+npm install --save-dev @bradygaster/squad-cli
 ```
 
 Then initialize:
 
 ```bash
-squad init
+npx squad init
 ```
 
 You'll see:
@@ -30,19 +30,10 @@ You'll see:
 ```
 ✅ Squad installed.
    .github/agents/squad.agent.md — coordinator agent
-   .github/workflows/            — 5 GitHub workflows (heartbeat, triage, CI, etc.)
-   .squad/templates/             — 11 template files
+   .squad/templates/ — 11 template files
 
 Open GitHub Copilot and select Squad from the agent list.
 ```
-
-> **Don't forget:** Commit the generated files — workflows won't run until they're on your default branch.
->
-> ```bash
-> git add .github/ .squad/
-> git commit -m "chore: initialize squad team"
-> git push
-> ```
 
 ---
 
@@ -59,7 +50,7 @@ You should see: `team.md`, `routing.md`, `decisions.md`, `agents/`, and more.
 Confirm Squad is ready:
 
 ```bash
-squad status
+npx squad status
 ```
 
 ---
