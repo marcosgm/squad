@@ -32,6 +32,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          SKIP_BUILD_BUMP: '1'
 
       - name: Run CLI smoke tests
         run: npx vitest run test/cli-packaging-smoke.test.ts
@@ -123,6 +125,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Build squad-sdk (required for CLI project references)
+        run: npm -w packages/squad-sdk run build
 
       - name: Build squad-cli
         run: npm -w packages/squad-cli run build
